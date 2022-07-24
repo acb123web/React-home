@@ -1,24 +1,38 @@
-import logo from './logo.svg';
 import './App.css';
+import React from "react";
 
 function App() {
+  const add = "Bharath";
+  const app = "Welcome " + add;
+  const lang = ["html","css","kotlin","javascript"];
+  const menus = ["Masaladosa","panipuri","gobi"];
+
+  /*list rendering*/
+  for(var i=0; i<lang.length; i++){
+    console.log(lang[i]);
+  }
+  /*end list rendering*/
+
+  /*conditional rendering*/
+  function conditionalRendering(){
+  const menu = menus.length === 0?<p>List is empty</p>:menus.map(menuss => <li>{menuss}</li>)
+  return menu;
+  }
+  /*end conditional rendering*/
+
+  console.log(app);
+  console.log(lang[0]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <div className="App">
+   <p>{app}</p>
+   <ul style={{textAlign:'left'}}>
+    {lang.map(langs => <li>{langs}</li>)}
+   </ul>
+   <ul style={{textAlign:'left'}}>
+    {conditionalRendering()}
+   </ul>
+  </div>
   );
 }
 
