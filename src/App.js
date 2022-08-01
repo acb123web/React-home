@@ -4,8 +4,14 @@ import React from "react";
 function App() {
   const add = "Bharath";
   const app = "Welcome " + add;
-  const lang = ["html","css","kotlin","javascript"];
+  const lang = [
+    {id:"1",info:"HTML"},
+    {id:"2",info:"CSS"},
+    {id:"3",info:"BOOTSTRAP"},
+    {id:"4",info:"JAVASCRIPT"}
+  ];
    const menus = ["Masaladosa","panipuri","gobi"];
+
 
    console.log(app);
   /*list rendering*/
@@ -27,8 +33,8 @@ function App() {
   <div className="App">
   <button type="button" className="btn btn-danger">This Server Running with Bootstrap v.5.0.2</button>
    <p>{app}</p>
-   <ul style={{textAlign:'left'}}>
-    {lang.map((langs,index) => <li key={index}>{langs}</li>)}
+   <ul style={{textAlign:'left',listStyle:"none"}}>
+   {lang.map(langs => <li className="badge bg-info text-white py-3 px-4 m-2" key={langs.id}>{langs.id}. {langs.info}</li>)}
    </ul>
    <ul style={{textAlign:'left'}}>
    {conditionalRendering()}
