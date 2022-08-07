@@ -1,5 +1,6 @@
 import './App.css';
 import React from "react";
+import MyCounter from './component/MyCounter';
 
 function App() {
 
@@ -12,21 +13,21 @@ function App() {
     lastname:"Hegde"
   }
 
-  const lang = [
-    {id:"1",info:"HTML"},
-    {id:"2",info:"CSS"},
-    {id:"3",info:"BOOTSTRAP"},
-    {id:"4",info:"JAVASCRIPT"}
-  ];
+const vctools = [
+  {"id":"1","vcname":"github"},
+  {"id":"2","vcname":"gitlab"},
+  {"id":"3","vcname":"bitbucket"}
+];
+ 
    const menus = ["Masaladosa","panipuri","gobi"];
 
 
   
-  /*list rendering*/
- for(var i=0; i<lang.length; i++){
-  console.log(lang[i]);
+  /*list rendering vctools normal*/
+ for(var i=0; i<vctools.length; i++){
+  console.log(vctools[i]);
  }
-  /*end list rendering*/
+  /*end list rendering vctools normal end*/
 
   /*conditional rendering*/
   function conditionalRendering(){
@@ -35,18 +36,18 @@ function App() {
   }
   /*end conditional rendering*/
 
-  console.log(lang[0]);
 
   return (
   <div className="App">
   <button type="button" className="btn btn-danger">This Server Running with Bootstrap v.5.0.2</button>
    <p>{userName(user)} !</p>
-   <ul style={{textAlign:'left',listStyle:"none"}}>
-   {lang.map(langs => <li className="badge bg-info text-white py-3 px-4 m-2" key={langs.id}>{langs.id}. {langs.info}</li>)}
+   <ul style={{listStyle:"none",textAlign:"left"}}>
+   {vctools.map(vctool => <li key={vctool.id}>{vctool.vcname}</li>)}
    </ul>
    <ul style={{textAlign:'left'}}>
    {conditionalRendering()}
    </ul>
+  <MyCounter/>
   </div>
   );
 }
