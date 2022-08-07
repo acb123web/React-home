@@ -2,8 +2,16 @@ import './App.css';
 import React from "react";
 
 function App() {
-  const add = "Bharath";
-  const app = "Welcome " + add;
+
+  function userName(user){
+    return user.welcome+" "+user.firstname +" "+ user.lastname;
+  }
+  const user ={
+    welcome:"Welcome",
+    firstname:"Bharath",
+    lastname:"Hegde"
+  }
+
   const lang = [
     {id:"1",info:"HTML"},
     {id:"2",info:"CSS"},
@@ -13,7 +21,7 @@ function App() {
    const menus = ["Masaladosa","panipuri","gobi"];
 
 
-   console.log(app);
+  
   /*list rendering*/
  for(var i=0; i<lang.length; i++){
   console.log(lang[i]);
@@ -32,7 +40,7 @@ function App() {
   return (
   <div className="App">
   <button type="button" className="btn btn-danger">This Server Running with Bootstrap v.5.0.2</button>
-   <p>{app}</p>
+   <p>{userName(user)} !</p>
    <ul style={{textAlign:'left',listStyle:"none"}}>
    {lang.map(langs => <li className="badge bg-info text-white py-3 px-4 m-2" key={langs.id}>{langs.id}. {langs.info}</li>)}
    </ul>
