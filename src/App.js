@@ -1,6 +1,7 @@
 import './App.css';
 import React from "react";
 import MyCounter from './component/MyCounter';
+import Counter from './component/Counter';
 
 function App() {
 
@@ -13,13 +14,19 @@ function App() {
     lastname:"Hegde"
   }
 
+  const langs = [
+    {"id":"1","langname":"kannada"},
+    {"id":"2","langname":"english"},
+    {"id":"3","langname":"hindi"},
+  ];
+
 const vctools = [
   {"id":"1","vcname":"github"},
   {"id":"2","vcname":"gitlab"},
   {"id":"3","vcname":"bitbucket"}
 ];
  
-   const menus = ["Masaladosa","panipuri","gobi"];
+
 
 
   
@@ -30,10 +37,10 @@ const vctools = [
   /*end list rendering vctools normal end*/
 
   /*conditional rendering*/
-  function conditionalRendering(){
-    const menu = menus.length === 0?<p>List is empty</p>:menus.map((menuss,index) => <li key={index}>{menuss}</li>)
-    return menu;
-  }
+ function conditionalRendering(){
+  var languages = langs.length === 0?<p>list is empty</p>:langs.map((langss => <li key={langss.id}>{langss.langname}</li>))
+  return languages;
+ }
   /*end conditional rendering*/
 
 
@@ -44,10 +51,11 @@ const vctools = [
    <ul style={{listStyle:"none",textAlign:"left"}}>
    {vctools.map(vctool => <li key={vctool.id}>{vctool.vcname}</li>)}
    </ul>
-   <ul style={{textAlign:'left'}}>
-   {conditionalRendering()}
+   <ul style={{textAlign:"left"}}>
+    {conditionalRendering()}
    </ul>
   <MyCounter/>
+  <Counter/>
   </div>
   );
 }
