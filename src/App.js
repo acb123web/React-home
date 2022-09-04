@@ -3,6 +3,7 @@ import React from "react";
 import MyCounter from './component/MyCounter';
 import Counter from './component/Counter';
 
+
 function App() {
 
   function userName(user){
@@ -55,7 +56,7 @@ const vctools = [
     {conditionalRendering()}
    </ul>
   <MyCounter/>
-  <Counter/>
+ <Counter/>
   </div>
   );
 }
