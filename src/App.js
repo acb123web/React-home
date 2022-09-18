@@ -56,7 +56,7 @@ const vctools = [
     {conditionalRendering()}
    </ul>
   <MyCounter/>
- <Counter/>
+  <Counter/>
   </div>
   );
 }
